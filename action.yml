@@ -11,9 +11,6 @@ inputs:
   Tenant_Id:
      description: 'TENANT_ID'
      required: true
-  Subscription_Id:
-     description: 'SUBSCRIPTION_ID'
-     required: true
   Secrets:
      description: 'Comma seperated list of secrets to fetch'
      required: true 
