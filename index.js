@@ -16,9 +16,7 @@ async function main() {
         let secretsArray = secrets.split(",");
 
         for(let i=0; i < secretsArray.length; i ++){
-
          let value = await getSecretFromAzureKeyVault(Tenant_Id, Client_Id, Secret_Id, VaultUrl, secretsArray[i]);
-         console.log("exporting:"+secretsArray[i]+", "+ value);
          core.setOutput(secretsArray[i], value);
          core.exportVariable(secretsArray[i], value);
         }
@@ -32,7 +30,6 @@ async function main() {
 
 async function getSecretFromAzureKeyVault(Tenant_Id, Client_Id, Secret_Id, VaultUrl, secretName) {
     try {
-        console.log("Fetching:"+secretName);
         const credential = new ClientSecretCredential(Tenant_Id, Client_Id, Secret_Id);
         const client = new SecretClient(VaultUrl, credential);
         const latestSecret = await client.getSecret(secretName);
