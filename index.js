@@ -17,7 +17,7 @@ async function main() {
 
         for(let i=0; i < secretsArray.length; i ++){
 
-         let value =  getSecretFromAzureKeyVault(Tenant_Id, Client_Id, Secret_Id, VaultUrl, secretsArray[i]);
+         let value = await getSecretFromAzureKeyVault(Tenant_Id, Client_Id, Secret_Id, VaultUrl, secretsArray[i]);
          console.log("exporting:"+secretsArray[i]+", "+ value);
          core.setOutput(secretsArray[i], value);
          core.exportVariable(secretsArray[i], value);
