@@ -1,0 +1,29 @@
+# action.yml
+name: 'Azure KeyVault GetSecret'
+description: 'Fetch Secret From Azure Keyvault using API'
+inputs:
+  Client_Id:
+     description: 'CLIENT_ID'
+     required: true
+  Secret_Id:
+     description: 'CLIENT_SECRET'
+     required: true
+  Tenant_Id:
+     description: 'TENANT_ID'
+     required: true
+  Subscription_Id:
+     description: 'SUBSCRIPTION_ID'
+     required: true
+  Secrets:
+     description: 'Comma seperated list of secrets to fetch'
+     required: true 
+  VaultUrl:
+     description: 'Vault Url'
+     required: true     
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+branding:
+  icon: 'play'  
+  color: 'green'
