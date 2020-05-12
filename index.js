@@ -10,7 +10,7 @@ async function main() {
         let Client_Id = core.getInput('Client_Id');
         let Secret_Id = core.getInput('Secret_Id');
         let Tenant_Id = core.getInput('Tenant_Id');
-        let secrets = core.getInput('Secrets');
+        let secrets = core.getInput('SecretNames');
         let VaultUrl = core.getInput('VaultUrl');
         
         let secretsArray = secrets.split(",");
